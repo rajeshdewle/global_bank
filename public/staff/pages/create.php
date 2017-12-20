@@ -13,7 +13,7 @@
         
 
         $sql = "INSERT INTO pages ";
-        $sql .= "(subject_id, menu_name, position, visible, content) "
+        $sql .= "(subject_id, menu_name, position, visible, content) ";
         $sql .= "VALUES (";
         $sql .= "'" . $page['subject_id'] . "', ";
         $sql .= "'" . $page['menu_name'] . "', ";
