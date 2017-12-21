@@ -7,7 +7,6 @@
 
     $id = $_GET['id'];
 
-
      if (is_post_request()) {
         $subject = [];
         $subject['id'] = $id;

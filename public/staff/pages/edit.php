@@ -16,11 +16,13 @@
         echo "Position : " . $position . "<br/>";
         echo "Visible: " . $visible . "<br/>";
     }
+    else {
+        $subject = find_subject_by_id($id);
+    }
 
     $page_title = 'Edit Page';
     include(SHARED_PATH . '/staff_header.php');
 ?>
-
 <div id="content">
     <a class="back-link" href="<?php echo url_for('staff/subjects/index.php'); ?>">&laquo; Back to list</a>
     <div class="subject edit">
@@ -35,7 +37,15 @@
                 <dt>Position</dt>
                 <dd>
                     <select name="position">
-                        <option value="1">1</option>
+                        <?php 
+                            for ($i=1; $i <= $subject_count; $i++) { 
+                                echo "<option value=\"{$i}\"";
+                                if($subject["position"]==$i) {
+                                    echo "selected";
+                                }
+                                echo ">{$i}</option>";
+                            }
+                         ?>
                     </select>
                 </dd>
             </dl>
